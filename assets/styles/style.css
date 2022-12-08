@@ -8,6 +8,9 @@
 
 :root {
     --main-dark: rgb(20, 20, 64);
+    --color-salmon: rgb(203, 79, 79);
+    --ff-main: 'Blinker', sans-serif;
+    --shadow-white: white 3px 0 5px;
 }
 
 body {
@@ -26,13 +29,13 @@ header {
 
 h1 {
     color: rgb(20, 20, 64);
-    font-size: 2.75rem;
+    font-size: 3rem;
 }
 
 .score-box {
     padding: 25px;
     border: 5px solid black;
-    max-width: 300px;
+    max-width: 400px;
     margin: 25px auto;
     align-items: center;
     text-align: center;
@@ -41,10 +44,11 @@ h1 {
 
 .score-box:hover {
     border: solid 5px white;
+    color: white;
 }
 
 .score {
-    font-size: 1.65rem;
+    font-size: 2rem;
     padding: 20px;
     align-items: center;
     margin: 0 auto;
@@ -52,12 +56,12 @@ h1 {
 }
 
 .score-value {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .result {
     padding: 30px;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     text-align: center;
     font-weight: bold;
     color: var(--main-dark)
@@ -78,20 +82,50 @@ h1 {
 .choice {
     display: flex;
     font-size: 6rem;
-    padding: 2rem;
+    padding: 3rem;
+    text-shadow: var(--shadow-white);
 }
 
-
-
-
-
-
-button {
-    font-family: 'Blinker', sans-serif;
-    font-size: 1.25rem;
+.icon:hover:hover {
+    /* border: 5px solid white;
+    border-radius: 35px; */
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
+.action {
+    padding: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
 
+.restart {
+    padding: 25px;
+    text-align: center;
+}
+
+.btn {
+    font-size: 1.5rem;
+    padding: 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-family: var(--ff-main);
+    background-color: white;
+    color: var(--main-dark);
+    /* border: 5px solid var(--main-dark); */
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 0px 5px 5px var(--main-dark);
+}
+
+.btn:hover{
+    cursor: pointer;
+    color: var(--main-dark);
+    transform: scale(1.1);
+    box-shadow: 0px 0px 5px 5px var(--color-salmon);
+
+}
 
 
 
