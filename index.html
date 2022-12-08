@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Blinker:wght@400;700&display=swap" rel="stylesheet">
     <title>Rock Paper Scissors Game</title>
 </head>
 <body>
@@ -14,9 +15,9 @@
     </header>
 
     <div class="score-box">
-        <div class="user">Your Score: <span id=user-score>0</span>
+        <div class="user score">Your Score: <span id=user-score>0</span>
         </div>
-        <div class="computer">Computer Score: <span id="computer-score">0</span></div>
+        <div class="computer score">Computer Score: <span id="computer-score">0</span></div>
 
     </div>
 
@@ -25,16 +26,18 @@
     </div>
 
     <div class="choices">
-        <div class="choice" id="choice1">
-            <img src="" alt="rock">
+        <div class="choice" id="rock">
+            <i class="fa-solid fa-hand-fist"></i>
         </div>        
-        <div class="choice" id="choice2">
-            <img src="" alt="paper">
+        <div class="choice" id="paper">
+            <i class="fa-solid fa-hand"></i>
         </div>        
-        <div class="choice" id="choice3">
-            <img src="" alt="scissors">
+        <div class="choice" id="scissors">
+            <i class="fa-solid fa-hand-scissors"></i>
         </div>        
     </div>
+
+    <p class="action-choice">Choose rock, paper or scissors</p>
 
     <div class="restart" id="restart-game">
         <button class="btn" id="restart-btn">
