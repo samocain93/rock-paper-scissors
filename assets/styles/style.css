@@ -23,7 +23,7 @@ body {
 
 header {
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     width: 100%;
 }
@@ -96,22 +96,23 @@ h1 {
 }
 
 .action {
-    padding: 20px;
+    padding: 15px;
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
+    margin: 0 auto;
 }
 
 .restart {
     padding: 20px;
     text-align: center;
-    margin-top: 0 auto;
+    margin: 20px
 }
 
 .btn {
     font-size: 1.5rem;
     padding: 15px;
-    margin-top: 20px;
+    margin: 20px 20px;
     border-radius: 20px;
     font-weight: bold;
     font-family: var(--ff-main);
@@ -135,7 +136,7 @@ h1 {
 
 footer {
     background-color: white;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     text-align: center;

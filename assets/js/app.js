@@ -8,57 +8,67 @@ const paperBtn = document.getElementById("paper");
 const scissorsBtn = document.getElementById("scissors");
 const buttonEl = document.getElementById("restart-btn");
 
+let userScore = 0;
+let computerScore = 0;
+let rounds = 0;
+let userChoice = "";
 
-// 1. Create game function to contain all logic and functions
-// 2. Create function to get random computer choice
-// 3. Get index to return value at index from random choices array
-// 4. Define playRound function
 
 
+// 1. Function to get user Choice when action buttons are clicked 
+// 2. Function to get computer choice as a random selection of RPS
+// 3. Function to compare user choice vs computer Choice (getWinner)
+    // If user wins, increase score, update text content and rounds
+    // If computer wins, increase comp score, text content and rounds
+    // if tie, no score change needed, increase rounds and update text content
+// 4. Play round function which will generate user choice function, computer choice funciton and pick winner function 
+
+
+// PLAY ROUND FUNCTION //
 
 
 function playRound() {
-    game();
+    getWinner();        
 }
 
-
-
-function game() {
-
-    // Score variables for each player
-    var userScore = 0;
-    var computerScore = 0;
-    var rounds = 0;
-    var userChoice;
 
 
     // This function is working to return the random computer choice
 
     function getComputerChoice() {
         const choices = ["rock", "paper", "scissors"];
-        var computerChoice = (Math.floor(Math.random() * choices.length));
+        let computerChoice = (Math.floor(Math.random() * choices.length));
         return choices[computerChoice];
            
     }
 
-    function getUserChoice() {
-        // These are working to grab and return user choice on click for the buttons
-        rockBtn.addEventListener('click', function() {
-            userChoice = "rock"; 
-        })
-
-        paperBtn.addEventListener('click', function() {
-            userChoice = "paper";
-        })
-
-        scissorsBtn.addEventListener('click', function() {
-            userChoice = "scissors";
-            
-        })
-            
-    }
+ 
 
     function getWinner(userChoice, computerChoice) {
+        
+
+        rockBtn.addEventListener("click", function() {
+            userChoice = "rock";
+            playRound();
+            
+        })
+
+        paperBtn.addEventListener("click", function() {
+            userChoice = "paper";
+            playRound();
+           
+        })
+
+        scissorsBtn.addEventListener("click", function() {
+            userChoice = "scissors";
+            playRound();
+        })
+
+        getComputerChoice();
+
+            
+
+
         if (userChoice === computerChoice) {
             winnerMessageEl.textContent = "It's a tie!"
         }
@@ -95,10 +105,29 @@ function game() {
                 userScoreEl.textContent = userScore;
             }
         }
-
         
+    }
+
+    getWinner();
 
 
-}
 
-}
+
+
+
+       // function getUserChoice() {
+    //     // These are working to grab and return user choice on click for the buttons
+    //     rockBtn.addEventListener('click', function() {
+    //         userChoice = "rock"; 
+    //     })
+
+    //     paperBtn.addEventListener('click', function() {
+    //         userChoice = "paper";
+    //     })
+
+    //     scissorsBtn.addEventListener('click', function() {
+    //         userChoice = "scissors";
+            
+    //     })
+            
+    // }
