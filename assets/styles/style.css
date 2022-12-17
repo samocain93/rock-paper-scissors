@@ -35,7 +35,7 @@ h1 {
 
 .score-box {
     padding: 20px;
-    border: 5px solid black;
+    border: 5px solid var(--main-dark);
     max-width: 400px;
     margin: 40px auto;
     align-items: center;
@@ -58,6 +58,13 @@ h1 {
 
 .score-value {
     font-size: 2rem;
+}
+
+#messages {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
 }
 
 .result {
@@ -136,7 +143,7 @@ h1 {
 
 footer {
     background-color: white;
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;

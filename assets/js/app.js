@@ -13,6 +13,9 @@
 const userScoreEl = document.getElementById("user-score");
 const computerScoreEl = document.getElementById("computer-score");
 const winnerMessageEl = document.getElementById("winner");
+const computerMessageEl = document.getElementById("computer-message");
+const roundsEl = document.getElementById("rounds");
+const messageBoxEl = document.getElementById("messages");
 const rockBtn = document.getElementById("rock");
 const paperBtn = document.getElementById("paper");
 const scissorsBtn = document.getElementById("scissors");
@@ -71,45 +74,61 @@ function getComputerChoice() {
 function getWinner() {
 
     if (playerChoice === computerChoice) {
+        computerMessageEl.textContent = `Computer picks: ${computerChoice}`;
         winnerMessageEl.textContent = "It's a tie!";
+        roundsEl.textContent = rounds;
+        
         // console.log("It is a tie!");
 
         } 
         else if(playerChoice === 'rock')
             if (computerChoice === 'paper') {
+               
+                computerMessageEl.textContent = `Computer picks: ${computerChoice}`;
                 winnerMessageEl.textContent = 'Paper beats rock. Computer wins!';
                 computerScore++;
                 computerScoreEl.textContent = computerScore;
+                roundsEl.textContent = rounds;
             }
             else {
+                computerMessageEl.textContent = `Computer picks: ${computerChoice}`;
                 winnerMessageEl.textContent = 'Rock beats scissors. You win!';
                 userScore++;
                 userScoreEl.textContent = userScore;
+                roundsEl.textContent = rounds;
             }
 
         else if(playerChoice === 'scissors') {
             if(computerChoice === 'rock') {
+                computerMessageEl.textContent = `Computer picks: ${computerChoice}`;
                 winnerMessageEl.textContent = "Rock beats scissors. Computer wins!"
                 computerScore++;
                 computerScoreEl.textContent = computerScore;
+                roundsEl.textContent = rounds;
                 }
                 else {
+                    computerMessageEl.textContent = `Computer picks: ${computerChoice}`;
                     winnerMessageEl.textContent = "Scissors beats paper. You win!";
                     userScore++;
                     userScoreEl.textContent = userScore;
+                    roundsEl.textContent = rounds;
                 }
             }
 
         else if (playerChoice === 'paper') {
             if(computerChoice === 'rock') {
+                computerMessageEl.textContent = `Computer picks: ${computerChoice}`;
                 winnerMessageEl.textContent = 'Paper beats rock. You win!';
                 userScore++;
                 userScoreEl.textContent = userScore;
+                roundsEl.textContent = rounds;
             }
             else {
+                computerMessageEl.textContent = `Computer picks: ${computerChoice}`;
                 winnerMessageEl.textContent = 'Scissors beats paper. Computer wins!';
                 computerScore++;
                 computerScoreEl.textContent = computerScore;
+                roundsEl.textContent = rounds;
             }
         }
 
@@ -117,3 +136,17 @@ function getWinner() {
 }
 
 
+// TODO: Add in section in HTML to display the computer's choice before the winner message
+// TODO: Add functionality to play again button to reset scores and game
+
+
+
+
+buttonEl.addEventListener('click', function() {
+    userScore = 0;
+    computerScore = 0;
+    rounds = 0;
+    userScoreEl.textContent = userScore;
+    computerScoreEl.textContent = computerScore;
+    roundsEl.textContent = rounds;
+})
